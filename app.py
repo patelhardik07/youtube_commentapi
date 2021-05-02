@@ -24,7 +24,7 @@ def predict():
   vid_res = youtube.videos().list(part='snippet',id=videoid).execute() 
   comments=[]
   nextPage_token=None
-  j=15
+  j=10
   while (j>0):
     req_comment=youtube.commentThreads().list(part='snippet',videoId=videoid, maxResults=100, pageToken=nextPage_token).execute()
     nextPage_token=req_comment.get('nextPageToken')
